@@ -27,10 +27,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ml-auto">
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Departamentos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#portfolio">Ofertas de la semana</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Cupones</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Nosotros</a></li>
+                    
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
                     </ul>
                 </div>
@@ -187,8 +188,14 @@
                 </div>
             </div>
         </section>
+
+        <section class="page-section" id="cupones">
+
+
+        </section>
+
         <!-- About-->
-        <section class="page-section" id="about">
+        {{-- <section class="page-section" id="about">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">About</h2>
@@ -248,7 +255,7 @@
                     </li>
                 </ul>
             </div>
-        </section>
+        </section> --}}
         <!-- Team-->
         <section class="page-section bg-light" id="team">
             <div class="container">
@@ -293,7 +300,7 @@
                 </div>
             </div>
         </section>
-        <!-- Clients-->
+        <!-- Marcas o proveedores-->
         <div class="py-5">
             <div class="container">
                 <div class="row">
@@ -316,8 +323,8 @@
         <section class="page-section" id="contact">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h2 class="section-heading text-uppercase">Quejas y sugerencias</h2>
+                    <h3 class="section-subheading text-muted">Aportanos tu opinion para seguir mejorando y brindarte el mejor servicio.</h3>
                 </div>
                 <form id="contactForm" name="sentMessage" novalidate="novalidate">
                     <div class="row align-items-stretch mb-5">
@@ -349,19 +356,20 @@
                 </form>
             </div>
         </section>
+
         <!-- Footer-->
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright © Your Website 2020</div>
+                    <div class="col-lg-4 text-lg-left">Copyright © 2020</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                     <div class="col-lg-4 text-lg-right">
-                        <a class="mr-3" href="#!">Privacy Policy</a>
-                        <a href="#!">Terms of Use</a>
+                        <a class="mr-3" href="#!">Politicas de privacidad</a>
+                        <a href="#!">Terminos de uso</a>
                     </div>
                 </div>
             </div>
@@ -376,10 +384,18 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
                                 <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/portfolio/01-full.jpg')}}" alt="" />
+
+
+                                    <!-- Lista de productos-->
+                                    <div class="productodepartamento">
+                                    <h2 class="text-uppercase">Frutas y verduras</h2>
+                                    {{-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> --}}
+                                    <form class="form-inline my-2 my-lg-0">
+                                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                                      </form>
+                                </div>
+                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" alt="" />
                                     <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
                                     <ul class="list-inline">
                                         <li>Date: January 2020</li>

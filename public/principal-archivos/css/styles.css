@@ -592,7 +592,7 @@ pre code {
 }
 @media (min-width: 1200px) {
   .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1140px;
+    max-width: 95%;
   }
 }
 .row {
@@ -1335,8 +1335,8 @@ pre code {
   }
 
   .col-lg-8 {
-    flex: 0 0 66.6666666667%;
-    max-width: 66.6666666667%;
+    flex: 100%;
+    max-width: 100%;
   }
 
   .col-lg-9 {
@@ -2394,8 +2394,9 @@ textarea.form-control {
   }
   .form-inline .form-control {
     display: inline-block;
-    width: auto;
+    width: 50%;
     vertical-align: middle;
+    margin-left: 20%;
   }
   .form-inline .form-control-plaintext {
     display: inline-block;
@@ -2463,6 +2464,8 @@ textarea.form-control {
 }
 .btn:not(:disabled):not(.disabled) {
   cursor: pointer;
+  width: 10%;
+  
 }
 a.btn.disabled,
 fieldset:disabled a.btn {
@@ -8799,7 +8802,7 @@ button.bg-dark:focus {
 
   .mt-lg-0,
 .my-lg-0 {
-    margin-top: 0 !important;
+    margin-top: 1rem !important;
   }
 
   .mr-lg-0,
@@ -8809,7 +8812,7 @@ button.bg-dark:focus {
 
   .mb-lg-0,
 .my-lg-0 {
-    margin-bottom: 0 !important;
+    margin-bottom: 1rem !important;
   }
 
   .ml-lg-0,
@@ -10228,13 +10231,28 @@ header.masthead .masthead-heading {
   max-width: 100vw;
 }
 .portfolio-modal .modal-content {
-  padding-top: 6rem;
+  padding-top: 2rem;
   padding-bottom: 6rem;
   text-align: center;
 }
 .portfolio-modal .modal-content h2 {
   font-size: 3rem;
   line-height: 3rem;
+  /* position: fixed; */
+}
+.productodepartamento{
+  /* position: static;
+  margin-bottom: 1rem; */
+  position: fixed;
+  width: 100%;
+  text-align: center;
+  margin:auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: white;
+
+
 }
 .portfolio-modal .modal-content p.item-intro {
   font-style: italic;
