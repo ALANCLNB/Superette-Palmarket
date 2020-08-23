@@ -12,9 +12,8 @@
   <title>Dashboard</title>
   <link rel="icon" type="image/x-icon" href="{{asset('/principal-archivos/assets/img/logos/palmarketlogo2.png')}}" />
   <!-- Custom fonts for this template-->
-  <link href="{{asset('/dashboard-archivos/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
+  {{-- <link href="'https://fontawesome.com/releases/v5.10.0/css/all.css'" rel="stylesheet" type="text/css"> --}}
+  <script src="https://kit.fontawesome.com/f37ec6fd07.js" crossorigin="anonymous"></script>
   <!-- Custom styles for this template-->
   <link href="{{asset('/dashboard-archivos/css/sb-admin-2.min.css')}}" rel="stylesheet">
   <link href="{{asset('/dashboard-archivos/vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
@@ -92,7 +91,7 @@
     {{-- Nav Item  - Quejas y sugerencias --}}
       <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseQys" aria-expanded="true" aria-controls="collapseQys">
-          <i class="fas fa-fw fa-file"></i>
+          <i class="fas fa-fw fa-file-alt"></i>
           <span>Quejas y sugerencias</span>
         </a>
         <div id="collapseQys" class="collapse" aria-labelledby="collapseQys" data-parent="#accordionSidebar">
@@ -120,7 +119,7 @@
       <!-- Nav Item - OFERTAS -->
       <li class="nav-item">
         <a class="nav-link" href="#usuarios">
-          <i class="fas fa-fw fa-chart-area"></i>
+          <i class="fas fa-fw fa-tags"></i>
           <span>Ofertas</span></a>
       </li>
 
