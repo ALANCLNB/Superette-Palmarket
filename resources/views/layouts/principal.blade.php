@@ -9,6 +9,8 @@
         <link rel="icon" type="image/x-icon" href="{{asset('/principal-archivos/assets/img/logos/palmarketlogo2.png')}}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
+        {{-- PDF reader --}}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.3.200/pdf_viewer.js"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
@@ -31,8 +33,8 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#departamentos">Departamentos</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#falta">Ofertas de la semana</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Cupones</a></li>
-                    
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Iniciar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -190,117 +192,72 @@
             </div>
         </section>
 
-        <section class="page-section" id="cupones">
 
+        {{-- Aqui va la seccion de ofertas en PDF --}}
+        <section class="page-section" id="ofertones">
+            
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Ofertas de la semana</h2>
+                    <h3 class="section-subheading text-muted">Descubre las ofertas de esta semana en Superettes Palmarket.</h3>
+                </div>
+
+
+                {{-- lector PDF ofertas --}}
+                <embed class="col-lg-6 col-md-10 col-sm-12    ml-auto mb-auto mr-auto mt-auto" src="{{asset('/principal-archivos/assets/pdf/miku.pdf')}}" id="pdf" />
+
+                
+                  
+
+                {{-- <div id="pdf_viewer">
+                    <canvas id="pdf_renderer"></canvas>
+                </div>
+
+                <div id="navigation-controls">
+                    <button id="go_previous">Anterior</button>
+                    <input type="number" value="1" id="current_page">
+                    <button id="go_next">Siguiente</button>
+                </div>
+
+                <div id="zoom-controls">
+                    <button id="zoom_in">+</button>
+                    <button id="zoom_out">-</button>
+                </div> --}}
+           
 
         </section>
 
-        <!-- About-->
-        {{-- <section class="page-section" id="about">
-            <div class="container">
-                <div class="text-center">
-                    <h2 class="section-heading text-uppercase">About</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <ul class="timeline">
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/principal-archivos/assets/img/about/1.jpg')}}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>2009-2011</h4>
-                                <h4 class="subheading">Our Humble Beginnings</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/principal-archivos/assets/img/about/2.jpg')}}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/principal-archivos/assets/img/about/3.jpg')}}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>December 2012</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('/principal-archivos/assets/img/about/4.jpg')}}" alt="" /></div>
-                        <div class="timeline-panel">
-                            <div class="timeline-heading">
-                                <h4>July 2014</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
-                            </div>
-                            <div class="timeline-body"><p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p></div>
-                        </div>
-                    </li>
-                    <li class="timeline-inverted">
-                        <div class="timeline-image">
-                            <h4>
-                                Be Part
-                                <br />
-                                Of Our
-                                <br />
-                                Story!
-                            </h4>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section> --}}
-        <!-- Team-->
+       
+
         <section class="page-section bg-light" id="team">
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="{{asset('/principal-archivos/assets/img/team/1.jpg')}}" alt="" />
-                            <h4>Kay Garland</h4>
-                            <p class="text-muted">Lead Designer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
+                    <h2 class="section-heading text-uppercase">Cupones</h2>
+                    <h3 class="section-subheading text-muted">Presenta este cupon en caja y recibe tu descuento.</h3>
+                
+
+                <div class="row  col-lg-12 col-md-12 col-sm-12    ml-auto mb-auto mr-auto mt-auto" >
+
+
+                    <div class="col-lg-2 col-md-1 col-sm-0    ml-auto mb-auto mr-auto mt-auto"></div>
+                        {{-- Div de cupones --}}
+                    <div class="col-lg-8 col-md-10 col-sm-12    ml-auto mb-auto mr-auto mt-auto" id="cupones">
+                            <h3 id="codigocupon"> 4DSA4D8D6AS4D8S</h2>
+                            <br>
+                            <label for="" id="descipcioncupon">20% de descuento en carnes</label>
                     </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="{{asset('/principal-archivos/assets/img/team/2.jpg')}}" alt="" />
-                            <h4>Larry Parker</h4>
-                            <p class="text-muted">Lead Marketer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="{{asset('/principal-archivos/assets/img/team/3.jpg')}}" alt="" />
-                            <h4>Diana Petersen</h4>
-                            <p class="text-muted">Lead Developer</p>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                        </div>
-                    </div>
+                        {{-- -------------------------- --}}
+                    <div class="col-lg-2 col-md-1 col-sm-0    ml-auto mb-auto mr-auto mt-auto"></div>
+
                 </div>
-                <div class="row">
-                    <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
-                </div>
+
+            </div>
+
             </div>
         </section>
+
+
+
+
         <!-- Marcas o proveedores-->
         <div class="py-5">
             <div class="container">
@@ -388,5 +345,41 @@
         <script src="{{asset('/principal-archivos/assets/mail/contact_me.js')}}"></script>
         <!-- Core theme JS-->
         <script src="{{asset('/principal-archivos/js/scripts.js')}}"></script>
+
+        {{-- SCRIPTS PARA EL LECTOR PDF --}}
+        {{-- <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
+        <script src="js/main.js"></script> --}}
+
+
     </body>
+
+    <script>
+        var myState = {
+            pdf: null,
+            current_page:1,
+            zoom:1
+        }
+        pdfjsLib.getDocument("prueba.pdf").then(pdf =>{
+            myState.pdf = pdf
+            render
+        })
+        function render(){
+            myState.pdf.getPage(myState.current_page.then(page =>{
+                var canvas = document.getElementById("pdf_renderer")
+                var ctx = canvas.getContext("2d")
+                var viewport = page.getViewPort(myState.zoom)
+
+                canvas.width = viewport.width
+                canvas.height = viewport.height
+
+                //render page
+                page.render({
+                    canvasContext:ctx,
+                    viewport:viewport
+                })
+            }))
+        }
+
+    </script>
+
 </html>
