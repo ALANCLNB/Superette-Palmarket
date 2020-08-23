@@ -358,256 +358,26 @@
             </div>
         </section>
 
+        
         <!-- Footer-->
-        <footer class="footer py-4">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright © 2020</div>
-                    <div class="col-lg-4 my-3 my-lg-0">
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                    <div class="col-lg-4 text-lg-right">
-                        <a class="mr-3" href="#!">Politicas de privacidad</a>
-                        <a href="#!">Terminos de uso</a>
-                    </div>
-                </div>
-            </div>
-        </footer>
+        @include('partials.footerprincipal')
+
+
+
+
+
+
+
         <!-- departamentos Modals-->
-        <!-- Modal 1-->
-        <div class="departamentos-modal modal fade" id="departamentosModal1" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="{{asset('/principal-archivos/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center" style="margin-top: 5rem;">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
+        @include('partials.departamentosmodals')
+
+     
 
 
-                                    <!-- Lista de productos-->
-                                    <div class="productodepartamento">
-                                    <h2 class="text-uppercase" style="margin-top: 2.5rem;">Frutas y verduras</h2>
-                                    {{-- <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p> --}}
-                                    <form class="form-inline my-2 my-lg-0    col-lg-12 col-md-12 col-sm-12">
-                                        <div class="col-lg-2 col-md-2 col-sm-1"></div>
-
-                                            <input class="form-control mr-sm-2   col-lg-6 col-md-6 col-sm-4"  type="search" placeholder="Busca aquí productos, marcas, etc.." aria-label="Search">
-                                            <button class="btn btn-outline-success my-2 my-sm-0 col-lg-2 col-md-2 col-sm-2"  type="submit">Buscar</button>
-                                        
-                                        <div class="col-lg-2 col-md-2 col-sm-1"></div> 
-                                    </form>
-
-                                </div>
-                                
-                                
-                                <div class="container d-block" style="margin-top: 3rem;">
-
-                                    <div class="row no-gutters">
-
-                                        @for($i=0; $i<6; $i++)
-                                            <div class="col-lg-3 col-md-4 col-sm-6 fondo con ml-auto mb-auto mr-auto mt-auto" style="margin-bottom: 0.5rem;">
-                                                <img src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" class="img-fluid" style="width: 95%; height: 95%; float: left;">
-
-                                                <ul class="list-inline">
-                                                    <li>Nombre</li>
-                                                    <li>Marca</li>
-                                                    <li>Precio</li>
-                                                </ul>
-                                                    {{-- <div class="texto1 mb-3">hola</div>
-                                                <div class="texto2 mt-5">Creado por:</div> --}}
-                                            </div>
-                                                
-                                            @endfor
 
 
-                                            
 
-                                        
-                                           
-                                        
-                                    </div>
-                                </div>
 
-                                            {{-- <div class="productoscontenedor" style="width: 25%;">
-                                                <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" alt="" />
-                                                <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos 
-                                                    deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                                <ul class="list-inline">
-                                                    <li>Nombre</li>
-                                                    <li>Marca</li>
-                                                    <li>Precio</li>
-                                                </ul>
-                                                <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                                    <i class="fas fa-times mr-1"></i>
-                                                    Close Project
-                                                </button>
-                                            </div> --}}
-
-                            </div>
-                                        {{-- Divs de productos --}}
-                                        
-                            
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 2-->
-        <div class="departamentos-modal modal fade" id="departamentosModal2" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="{{asset('/principal-archivos/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/departamentos/02-full.jpg')}}" alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Explore</li>
-                                        <li>Category: Graphic Design</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 3-->
-        <div class="departamentos-modal modal fade" id="departamentosModal3" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="{{asset('/principal-archivos/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/departamentos/03-full.jpg')}}" alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Finish</li>
-                                        <li>Category: Identity</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 4-->
-        <div class="departamentos-modal modal fade" id="departamentosModal4" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="{{asset('/principal-archivos/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/departamentos/04-full.jpg')}}" alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Lines</li>
-                                        <li>Category: Branding</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 5-->
-        <div class="departamentos-modal modal fade" id="departamentosModal5" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="{{asset('/principal-archivos/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/departamentos/05-full.jpg')}}" alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Southwest</li>
-                                        <li>Category: Website Design</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Modal 6-->
-        <div class="departamentos-modal modal fade" id="departamentosModal6" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="{{asset('/principal-archivos/assets/img/close-icon.svg')}}" alt="Close modal" /></div>
-                    <div class="container">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="modal-body">
-                                    <!-- Project Details Go Here-->
-                                    <h2 class="text-uppercase">Project Name</h2>
-                                    <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                                    <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/departamentos/06-full.jpg')}}" alt="" />
-                                    <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
-                                    <ul class="list-inline">
-                                        <li>Date: January 2020</li>
-                                        <li>Client: Window</li>
-                                        <li>Category: Photography</li>
-                                    </ul>
-                                    <button class="btn btn-primary" data-dismiss="modal" type="button">
-                                        <i class="fas fa-times mr-1"></i>
-                                        Close Project
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
