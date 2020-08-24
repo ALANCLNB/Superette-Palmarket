@@ -4,11 +4,9 @@
 @extends('dashboard.dash')
 
 
-@section('foto')
+@section('principal')
     
-<img src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" alt="">
-
-
+<img src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" alt="" class="w-100 h-100 ml-auto mr-auto mt-auto mb-auto">
 
 @endsection
 
