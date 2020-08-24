@@ -380,6 +380,7 @@
   <script src="{{asset('/dashboard-archivos/js/demo/datatables-demo.js')}}"></script>
 
 
+  @yield('scripts')
 
   
 

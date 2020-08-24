@@ -53,4 +53,9 @@ Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
     Route::get('admin/qys', 'QySController@index');
     Route::get('admin/ofertas', 'OfertasController@index');
 
+
+    /*Route::post('admin/usuarios', 'UsuariosController@store');*/
+
+
+    Route::resource('admin/usuarios', 'UsuariosController');
 });

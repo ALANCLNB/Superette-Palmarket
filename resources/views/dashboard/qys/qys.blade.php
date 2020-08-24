@@ -75,7 +75,7 @@
                 <td>
                     <button class="btn btn-danger boton">Responder</button>                   
                 </td>
-                <td>2011/08/14</td>
+                <td>2020/08/14</td>
                 <td>Pueblo</td>
 
               </tr>
@@ -93,7 +93,7 @@
                 <td>
                     <button class="btn btn-danger boton">Responder</button>                   
                 </td>
-                <td>2011/08/14</td>
+                <td>2011/08/13</td>
                 <td>Lagunas</td>
 
               </tr>
@@ -111,7 +111,7 @@
                 <td>
                     <a href="" class="btn btn-info boton">Responder</a>                 
                 </td>
-                <td>2011/08/14</td>
+                <td>2011/08/12</td>
                 <td>Arboledas</td>
 
               </tr>
