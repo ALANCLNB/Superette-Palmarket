@@ -27,3 +27,30 @@ Route::get('/index', function () {
 Route::get('/dash', function () {
     return view('dashboard.dash');
 });
+
+
+
+
+
+
+
+Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
+   
+    Route::get('/', function () {
+        return view('dashboard.principaldash');
+    });
+    
+    Route::get('/admin', function () {
+        return view('dashboard.admin.admindash');
+    });
+
+    Route::get('/user', function () {
+        return view('dashboard.user.userdash');
+    });
+
+    Route::get('/admin/productos', 'ProductosController@index');
+    Route::get('admin/usuarios', 'UsuariosController@index');
+    Route::get('admin/qys', 'QySController@index');
+    Route::get('admin/ofertas', 'OfertasController@index');
+
+});

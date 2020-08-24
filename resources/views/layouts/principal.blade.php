@@ -6,7 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Superettes Palmarket</title>
-        <link rel="icon" type="image/x-icon" href="{{asset('/principal-archivos/assets/img/logos/palmarketlogo2.png')}}" />
+        <link rel="icon" type="image/x-icon" href="{{asset('/principal-archivos/assets/img/logos/palmarketlogo2.png')}}" id="logoPrincipal" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
         {{-- PDF reader --}}
@@ -31,8 +31,8 @@
                     <ul class="navbar-nav text-uppercase ml-auto">
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#services">Nosotros</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#departamentos">Departamentos</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#falta">Ofertas de la semana</a></li>
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Cupones</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ofertones">Ofertas de la semana</a></li>
+                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cuponzasos">Cupones</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Iniciar Sesion</a></li>
                     </ul>
@@ -198,7 +198,7 @@
             
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Ofertas de la semana</h2>
-                    <h3 class="section-subheading text-muted">Descubre las ofertas de esta semana en Superettes Palmarket.</h3>
+                    <h3 class="section-subheading text-muted">Descubre las ofertas de esta semana que tenemos para ti en Superettes Palmarket.</h3>
                 </div>
 
 
@@ -228,7 +228,7 @@
 
        
 
-        <section class="page-section bg-light" id="team">
+        <section class="page-section bg-light" id="cuponzasos">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">Cupones</h2>

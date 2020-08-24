@@ -10577,3 +10577,8 @@ text-align: center;
   text-align: center;
   /* visibility: hidden; */
 }
+
+#logoPrincipal:hover{
+  transform: scale(1.5);
+}
+
