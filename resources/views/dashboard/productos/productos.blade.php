@@ -4,10 +4,27 @@
 
 
 @section('productos')
-    
+
+
+
+<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-auto mr-auto" 
+style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="fas fa-plus fa-sm text-white-50"></i> Nuevo Producto</a>
 <h1 class="h3 mb-2 text-gray-800">Productos</h1>
 <p class="mb-4">Bienvenido a productos.</p>
 
+<div class="modal-body">
+
+  {{-- Alerta Error al llenar campos --}}
+  <div class="row">
+      @if ($message = Session::get('Listo'))
+          <div class="col-12 alert alert-success alert-dismissable fade show" role="alert">
+              <h5>Correcto</h5>
+          <span>{{ $message }}</span>   
+          </div>    
+  
+      @endif
+  
+  </div>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -21,174 +38,48 @@
           <tr>
             <th>ID</th>
             <th>Nombre</th>
-            <th>Precio Actual</th>
             <th>Cantidad</th>
-            <th>nada1</th>
-            <th>nada2</th>
+            <th>Marca</th>
+            <th>Precio Actual</th>
+            <th>Precio Anterior</th>
+            <th>Usuario</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
         </thead>
-
+        
         <tfoot>
-            <th>ID</th>
+          <th>ID</th>
             <th>Nombre</th>
-            <th>Precio Actual</th>
             <th>Cantidad</th>
-            <th>nada1</th>
-            <th>nada2</th>
+            <th>Marca</th>
+            <th>Precio Actual</th>
+            <th>Precio Anterior</th>
+            <th>Usuario</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
         </tfoot>
 
-        {{-- CAMPOS DE PRUEBA --}}
-      <tr>
-        <td>Shou Itou</td>
-        <td>Regional Marketing</td>
-        <td>Tokyo</td>
-        <td>20</td>
-        <td>2011/08/14</td>
-        <td>$163,000</td>
-      </tr>
-      <tr>
-        <td>Michelle House</td>
-        <td>Integration Specialist</td>
-        <td>Sidney</td>
-        <td>37</td>
-        <td>2011/06/02</td>
-        <td>$95,400</td>
-      </tr>
-      <tr>
-        <td>Suki Burks</td>
-        <td>Developer</td>
-        <td>London</td>
-        <td>53</td>
-        <td>2009/10/22</td>
-        <td>$114,500</td>
-      </tr>
-      <tr>
-        <td>Prescott Bartlett</td>
-        <td>Technical Author</td>
-        <td>London</td>
-        <td>27</td>
-        <td>2011/05/07</td>
-        <td>$145,000</td>
-      </tr>
-      <tr>
-        <td>Gavin Cortez</td>
-        <td>Team Leader</td>
-        <td>San Francisco</td>
-        <td>22</td>
-        <td>2008/10/26</td>
-        <td>$235,500</td>
-      </tr>
-      <tr>
-        <td>Martena Mccray</td>
-        <td>Post-Sales support</td>
-        <td>Edinburgh</td>
-        <td>46</td>
-        <td>2011/03/09</td>
-        <td>$324,050</td>
-      </tr>
-      <tr>
-        <td>Unity Butler</td>
-        <td>Marketing Designer</td>
-        <td>San Francisco</td>
-        <td>47</td>
-        <td>2009/12/09</td>
-        <td>$85,675</td>
-      </tr>
-      <tr>
-        <td>Howard Hatfield</td>
-        <td>Office Manager</td>
-        <td>San Francisco</td>
-        <td>51</td>
-        <td>2008/12/16</td>
-        <td>$164,500</td>
-      </tr>
-      <tr>
-        <td>Hope Fuentes</td>
-        <td>Secretary</td>
-        <td>San Francisco</td>
-        <td>41</td>
-        <td>2010/02/12</td>
-        <td>$109,850</td>
-      </tr>
-      <tr>
-        <td>Vivian Harrell</td>
-        <td>Financial Controller</td>
-        <td>San Francisco</td>
-        <td>62</td>
-        <td>2009/02/14</td>
-        <td>$452,500</td>
-      </tr>
-      <tr>
-        <td>Timothy Mooney</td>
-        <td>Office Manager</td>
-        <td>London</td>
-        <td>37</td>
-        <td>2008/12/11</td>
-        <td>$136,200</td>
-      </tr>
-      <tr>
-        <td>Jackson Bradshaw</td>
-        <td>Director</td>
-        <td>New York</td>
-        <td>65</td>
-        <td>2008/09/26</td>
-        <td>$645,750</td>
-      </tr>
-      <tr>
-        <td>Olivia Liang</td>
-        <td>Support Engineer</td>
-        <td>Singapore</td>
-        <td>64</td>
-        <td>2011/02/03</td>
-        <td>$234,500</td>
-      </tr>
-      <tr>
-        <td>Bruno Nash</td>
-        <td>Software Engineer</td>
-        <td>London</td>
-        <td>38</td>
-        <td>2011/05/03</td>
-        <td>$163,500</td>
-      </tr>
-      <tr>
-        <td>Sakura Yamamoto</td>
-        <td>Support Engineer</td>
-        <td>Tokyo</td>
-        <td>37</td>
-        <td>2009/08/19</td>
-        <td>$139,575</td>
-      </tr>
-      <tr>
-        <td>Thor Walton</td>
-        <td>Developer</td>
-        <td>New York</td>
-        <td>61</td>
-        <td>2013/08/11</td>
-        <td>$98,540</td>
-      </tr>
-      <tr>
-        <td>Finn Camacho</td>
-        <td>Support Engineer</td>
-        <td>San Francisco</td>
-        <td>47</td>
-        <td>2009/07/07</td>
-        <td>$87,500</td>
-      </tr>
-      <tr>
-        <td>Serge Baldwin</td>
-        <td>Data Coordinator</td>
-        <td>Singapore</td>
-        <td>64</td>
-        <td>2012/04/09</td>
-        <td>$138,575</td>
-      </tr>
-      <tr>
-        <td>Zenaida Frank</td>
-        <td>Software Engineer</td>
-        <td>New York</td>
-        <td>63</td>
-        <td>2010/01/04</td>
-        <td>$125,250</td>
-      </tr>
+        @foreach ($prod as $producto)
+                      <tr>
+                        <td>{{ $producto ->id }}</td>
+                        <td>{{ $producto ->nombre }}</td>
+                        <td>{{ $producto ->stock }}</td>
+                        <td>{{ $producto ->marca }}</td>
+                        <td>{{ $producto ->precio }}</td>
+                        <td>{{ $producto ->precio_ant }}</td>
+                        <td>{{ $producto ->Usernombre }}</td>
+                        <td>{{ $producto ->categoria }}</td>
+                        <td>
+                            
+                                <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
+                    
+                                <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
+                                
+                        </td>
+                      </tr>
+                @endforeach
+        
+      
       
             
 
@@ -200,5 +91,113 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+</div>
+
+
+
+
+   <!-- Modal Agregar -->
+   <div class="modal fade" id="modalAgregarP" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <form action="/dash/admin/productos" method="POST">
+            @csrf
+            <div class="modal-body">
+
+                {{-- Alerta Error al llenar campos --}}
+                <div class="row">
+                    @if ($message = Session::get('ErrorInsert'))
+                        <div class="col-12 alert alert-danger alert-dismissable fade show" role="alert">
+                            <h5>Errores:</h5>
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>                    
+                                @endforeach    
+                            </ul>    
+                        </div>    
+                
+                    @endif
+                
+                </div>
+                {{-- Fin Alerta Errores --}}
+
+                <div class="form-group">
+                <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="categoria" placeholder="Categoría" value="">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="marca" placeholder="Marca" value="{{ old('marca') }}">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="precio" placeholder="Precio" value="{{ old('precio') }}">
+                </div>
+
+                <div class="form-group">
+                    <input type="file" class="form-control" name="imagen" placeholder="hgg">
+                </div>
+
+                <div class="form-group">
+                    <input type="text" class="form-control" name="stock" placeholder="Stock" value="{{ old('stock') }}">
+                </div>
+
+                
+                
+
+
+                  {{-- <label for="exampleFormControlSelect1">Estado del producto</label>
+                  <select class="form-control" id="exampleFormControlSelect1" name="oferta">
+                    
+                    <option value="">Seleccionar</option>
+                    <option value="0">Regular</option>
+                    <option value="1">En oferta</option>
+
+                  </select> --}}
+                
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  
+@endsection
+
+
+@section('scripts')
+
+  <script>
+      $(document).ready(function(){
+        @if ($message = Session::get('ErrorInsert'))
+                $("#modalAgregarP").modal('show');  
+        
+            @endif
+      });
+  </script>
 
 @endsection

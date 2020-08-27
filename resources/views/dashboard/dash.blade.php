@@ -245,10 +245,12 @@
 
 @yield('productos')
 @yield('usuarios')
-@yield('qys')
+@yield('qysadmin')
+@yield('qysuser')
 @yield('ofertas')
 @yield('cupones')
-
+@yield('categorias')
+@yield('roles')
   
 
 

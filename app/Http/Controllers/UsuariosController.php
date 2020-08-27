@@ -13,7 +13,13 @@ class UsuariosController extends Controller
 
    public function index()
    {
-       return view('dashboard.usuarios.usuarios');
+        $usuarios = \DB::table('users')
+        ->where('created_at', '>=', now()->subDays(7))
+        ->select('users.*')
+        ->orderBy('id','DESC')
+        ->get();
+
+       return view('dashboard.usuarios.usuarios')->with('usuarios',$usuarios);
    } 
 
     public  function store(Request $request)
@@ -25,8 +31,8 @@ class UsuariosController extends Controller
                 'pass1' => 'required|min:3|max:50|required_with:pass2|same:pass2',
                 'pass2' => 'required|min:3|max:50',
                 'imagen' => 'required|min:3|max:50',
-                'rol' => 'required|min:3|max:50',
-                'sucursal' => 'required|min:3|max:50'
+                'rol' => 'required|min:1|max:5',
+                'sucursal' => 'required|min:1|max:5'
 
         ]);
 

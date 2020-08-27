@@ -11,6 +11,6 @@ class CuponesController extends Controller
 
     public function index()
     {
-        //return view('dashboard.productos.productos');
+        return view('dashboard.cupones.cupones');
     }
 }

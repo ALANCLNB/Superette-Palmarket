@@ -20,7 +20,8 @@
     </div> --}}
        
         <!-- Page Heading -->
-        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-auto mr-auto" style="float: right" data-toggle="modal" data-target="#modalAgregar"><i class="fas fa-plus fa-sm text-white-50"></i> Nuevo Usuario</a>
+        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-auto mr-auto" 
+        style="float: right" data-toggle="modal" data-target="#modalAgregar"><i class="fas fa-plus fa-sm text-white-50"></i> Nuevo Usuario</a>
         <h1 class="h3 mb-2 text-gray-800">Usuarios</h1>
         <p class="mb-4">.</p>
 
@@ -48,141 +49,42 @@
               <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>Correo</th>
                     <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Edad</th>
-                    <th>otro</th>
+                    <th>Apellido</th>
+                    <th>E-mail</th>
+                    <th>Rol</th>
+                    <th>Sucursal</th>
+                    <th>Acciones</th>
                 </thead>
     
                 <tfoot>
-                    <th>ID</th>
-                    <th>Correo</th>
-                    <th>Nombre</th>
-                    <th>Apellidos</th>
-                    <th>Edad</th>
-                    <th>otro</th>
+                  <th>Nombre</th>
+                  <th>Apellido</th>
+                  <th>E-mail</th>
+                  <th>Rol</th>
+                  <th>Sucursal</th>
+                  <th>Acciones</th>
                 </tfoot>
     
-                {{-- CAMPOS DE PRUEBA --}}
-              <tr>
-                <td>1</td>
-                <td>aorus@gmai.com</td>
-                <td>Juan</td>
-                <td>Solis</td>
-                <td>25</td>
 
-                <td>
-                    <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
-        
+                @foreach ($usuarios as $usuario)
+                      <tr>
+                        <td>{{ $usuario ->nombre }}</td>
+                        <td>{{ $usuario ->apellidos }}</td>
+                        <td>{{ $usuario ->email }}</td>
+                        <td>{{ $usuario ->rol }}</td>
+                        <td>{{ $usuario ->sucursal }}</td>
+                        <td>
+                            
+                                <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
+                    
+                                <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
+                                
+                        </td>
+                      </tr>
+                @endforeach
+
             
-                    <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                    
-                </td>
-
-
-
-
-
-
-
-
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>alfa@gmai.com</td>
-                <td>Marco</td>
-                <td>Salas</td>
-                <td>31</td>
-                <td>
-                    
-                        <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
-            
-                
-                        <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                        
-                    
-                </td>
-              </tr>
-
-              <tr>
-                <td>3</td>
-                <td>pubg@gmai.com</td>
-                <td>Luis</td>
-                <td>Romero</td>
-                <td>19</td>
-                <td>
-
-                    
-                        <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
-            
-                
-                        <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                        
-                    
-                </td>
-              </tr>
-
-              <tr>
-                <td>4</td>
-                <td>amd@gmai.com</td>
-                <td>Lisa</td>
-                <td>Su</td>
-                <td>40</td>
-                <td>
-
-                    
-                        <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
-            
-                
-                        <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                        
-                    
-                </td>
-              </tr>
-
-              <tr>
-                <td>5</td>
-                <td>eagle@gmai.com</td>
-                <td>Brisa</td>
-                <td>Romero</td>
-                <td>21</td>
-                <td>
-
-                   
-                        <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
-            
-                
-                        <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                        
-                    
-                </td>
-              </tr>
-
-              <tr>
-                <td>6</td>
-                <td>pencil@gmai.com</td>
-                <td>Bic</td>
-                <td>Vapo</td>
-                <td>42</td>
-                <td>
-
-                 
-                        <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
-            
-                
-                        <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                        
-                    
-                </td>
-              </tr>
-              
-              
-                    
-    
-    
-                
                  
                 </tbody>
               </table>

@@ -58,4 +58,6 @@ Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
 
 
     Route::resource('admin/usuarios', 'UsuariosController');
+    Route::resource('admin/productos', 'ProductosController');
+    Route::resource('admin/qys', 'QySController');
 });
