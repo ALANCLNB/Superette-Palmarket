@@ -84,6 +84,32 @@
     <i class="fas fa-fw fa-file-alt"></i>
     <span>Quejas y Sugerencias</span></a>
 </li>
+
+
+{{-- Nav Item  - Categorias --}}
+<li class="nav-item active">
+  <a class="nav-link" href="/dash/admin/categorias">
+    <i class="fas fa-fw fa-file-alt"></i>
+    <span>Categorias</span></a>
+</li>
+
+
+{{-- Nav Item  - Roles --}}
+<li class="nav-item active">
+  <a class="nav-link" href="/dash/admin/roles">
+    <i class="fas fa-fw fa-file-alt"></i>
+    <span>Roles</span></a>
+</li>
+
+
+
+
+
+
+
+
+
+
  <!-- Divider -->
  <hr class="sidebar-divider">
 

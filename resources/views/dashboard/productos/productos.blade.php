@@ -56,7 +56,7 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
             <th>Precio Anterior</th>
             <th>Usuario</th>
             <th>Categoría</th>
-            <th>Acciones</th>
+            <th>Acciones</th> 
         </tfoot>
 
         @foreach ($prod as $producto)
@@ -68,12 +68,19 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
                         <td>{{ $producto ->precio }}</td>
                         <td>{{ $producto ->precio_ant }}</td>
                         <td>{{ $producto ->Usernombre }}</td>
-                        <td>{{ $producto ->categoria }}</td>
+                        <td>{{ $producto ->Cateid }}</td>
                         <td>
                             
                                 <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
                     
-                                <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-danger  btnEliminar" data-id="{{ $producto->id }}" data-toggle="modal" data-target="#modalEliminar">
+                                  <i class="fa fa-trash"></i></button>
+                                            
+                                            <form action="{{ url('/dash/admin/productos', ['id'=>$producto->id] ) }}" method="POST" id="formEli_{{ $producto->id }}">
+                                                @csrf
+                                                <input type="hidden" name="id" value="{{ $producto->id }}">
+                                                <input type="hidden" name="_method" value="delete">
+                                            </form>
                                 
                         </td>
                       </tr>
@@ -140,7 +147,20 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
 
                 <div class="form-group">
                     <input type="text" class="form-control" name="categoria" placeholder="Categoría" value="">
+                    {{-- <select class="custom-select    col-lg-4 col-md-6 col-sm-10    ml-auto mb-auto mr-auto mt-auto" name="tipo" id="validationCustom04" required>
+                     
+                      <option selected disabled value="">Seleccionar</option>
+                      <option selected disabled value="1">1</option>
+                       @foreach ($Cateid as $c)
+                          <option value="{{ $c->Cateid }}">{{ $c->descripcion }}</option>
+                      @endforeach 
+                      
+                      
+                    </select> --}}
                 </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="oferta" placeholder="Oferta" value="">
+                  </div>
 
                 <div class="form-group">
                     <input type="text" class="form-control" name="marca" placeholder="Marca" value="{{ old('marca') }}">
@@ -159,19 +179,6 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
                 </div>
 
                 
-                
-
-
-                  {{-- <label for="exampleFormControlSelect1">Estado del producto</label>
-                  <select class="form-control" id="exampleFormControlSelect1" name="oferta">
-                    
-                    <option value="">Seleccionar</option>
-                    <option value="0">Regular</option>
-                    <option value="1">En oferta</option>
-
-                  </select> --}}
-                
-
             </div>
 
             <div class="modal-footer">
@@ -185,7 +192,39 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
     </div>
   </div>
 
-  
+
+
+  <!-- Modal Eliminar -->
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eleminar producto</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      
+          <div class="modal-body">
+                
+                <h5 class="mb-3 mt-3">¿Desea eliminar el producto?</h5>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger btnModalEliminar">Eliminar</button>
+                </div>
+
+          </div>
+
+    
+
+    </div>
+  </div>
+</div>
+
+
+
 @endsection
 
 
@@ -198,6 +237,20 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
         
             @endif
       });
+
+
+      var idEliminar=0;
+
+    $(".btnEliminar").click(function(){      
+     idEliminar = $(this).data('id');
+    });
+
+
+    $(".btnModalEliminar").click(function(){ 
+     $("#formEli_"+idEliminar).submit();
+    });
+
+
   </script>
 
 @endsection

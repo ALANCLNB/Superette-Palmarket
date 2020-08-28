@@ -17,6 +17,8 @@ class CategoriasMigration extends Migration
         $table->id();
         $table->char('id_user',5);
         $table->string('descripcion');
+        $table->string('token');
+        $table->string('imagen');
         $table->rememberToken();
         $table->timestamps();
     });

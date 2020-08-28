@@ -14,7 +14,10 @@ class ProductosController extends Controller
     {
         $prod = DB::table('productos')
         ->join('users','users.id','=','productos.id_user')
-        ->select('productos.*','users.nombre as Usernombre')
+        ->join('categorias','categorias.id','=','productos.categoria')
+        ->select('productos.*',
+        'users.nombre as Usernombre',
+        'categorias.descripcion as Cateid')
         ->orderBy('id','ASC')
         ->get();
 
@@ -35,9 +38,9 @@ class ProductosController extends Controller
     {
         $validator = Validator::make($request->all(),[
                 'nombre' => 'required|min:3|max:50',
-                'categoria' => 'required|min:3|max:10',
+                'categoria' => 'required|min:1|max:3',
                 'marca' => 'required|min:3|max:50',
-                'precio' => 'required|min:5|max:10',
+                'precio' => 'required|min:4|max:10',
                 'imagen' => 'required|min:3|max:100',
                 //'precio_ant' => 'required|min:5|max:50',
                 'stock' => 'required|min:1|max:5'
@@ -71,6 +74,15 @@ class ProductosController extends Controller
            
         }
     }
+
+    public function destroy($id)
+    {
+        //dd($id);
+        $Dprod = Producto::find($id);
+
+        $Dprod->delete();
+        return back()->with('Listo','El producto fue eliminado con exito.');
+    } 
 
 
 }

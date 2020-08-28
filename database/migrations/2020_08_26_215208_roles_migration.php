@@ -16,7 +16,7 @@ class RolesMigration extends Migration
         Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->char('id_user',5);
-            $table->string('descricion');
+            $table->string('descripcion');
             $table->char('token',2);
             $table->rememberToken();
             $table->timestamps();

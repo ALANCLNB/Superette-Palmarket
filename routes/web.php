@@ -52,7 +52,8 @@ Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
     Route::get('admin/usuarios', 'UsuariosController@index');
     Route::get('admin/qys', 'QySController@index');
     Route::get('admin/ofertas', 'OfertasController@index');
-
+    Route::get('admin/categorias', 'CategoriasController@index');
+    Route::get('admin/roles', 'RolesController@index');
 
     /*Route::post('admin/usuarios', 'UsuariosController@store');*/
 
@@ -60,4 +61,6 @@ Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
     Route::resource('admin/usuarios', 'UsuariosController');
     Route::resource('admin/productos', 'ProductosController');
     Route::resource('admin/qys', 'QySController');
+    Route::resource('admin/roles', 'RolesController');
+    Route::resource('admin/categorias', 'CategoriasController');
 });

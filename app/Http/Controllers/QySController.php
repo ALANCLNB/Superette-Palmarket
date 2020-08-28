@@ -59,4 +59,13 @@ class QySController extends Controller
     }
 
 
+    public function destroy($id)
+    {
+        //dd($id);
+        $queys = Comentario::find($id);
+
+        $queys->delete();
+        return back()->with('Eliminado','El registro fue eliminado con exito.');
+    }   
+
 }

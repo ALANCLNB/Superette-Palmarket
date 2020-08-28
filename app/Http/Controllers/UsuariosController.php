@@ -19,7 +19,7 @@ class UsuariosController extends Controller
         ->orderBy('id','DESC')
         ->get();
 
-       return view('dashboard.usuarios.usuarios')->with('usuarios',$usuarios);
+       return view('dashboard.usuarios.usuarios',compact('usuarios'));//'usuarios,variable,variable' para poner varis variables a enviar
    } 
 
     public  function store(Request $request)
@@ -60,6 +60,15 @@ class UsuariosController extends Controller
            
         }
     }
+
+    public function destroy($id)
+    {
+        //dd($id);
+        $Duser = User::find($id);
+
+        $Duser->delete();
+        return back()->with('Listo','El usuario fue eliminado con exito.');
+    } 
 
 
 }

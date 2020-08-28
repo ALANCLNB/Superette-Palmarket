@@ -23,7 +23,7 @@ class ProductosMigration extends Migration
             $table->string('precio_ant');
             $table->string('stock');
             $table->string('id_user');
-            $table->boolean('oferta');
+            $table->string('oferta');
             $table->rememberToken();
             $table->timestamps();
         });

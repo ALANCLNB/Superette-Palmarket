@@ -78,8 +78,16 @@
                             
                                 <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
                     
-                                <button class="btn btn-danger boton"><i class="fa fa-trash"></i></button>
-                                
+                                <button class="btn btn-danger  btnEliminar" data-id="{{ $usuario->id }}" data-toggle="modal" data-target="#modalEliminar">
+                                  <i class="fa fa-trash"></i></button>
+                                  
+                                  
+                                    <form action="{{ url('/dash/admin/usuarios', ['id'=>$usuario->id] ) }}" method="POST" id="formEli_{{ $usuario->id }}">
+                                          @csrf
+                                          <input type="hidden" name="id" value="{{ $usuario->id }}">
+                                          <input type="hidden" name="_method" value="delete">
+                                    </form>
+
                         </td>
                       </tr>
                 @endforeach
@@ -173,6 +181,40 @@
       </div>
     </div>
   </div>
+
+
+
+
+<!-- Modal Eliminar -->
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Eleminar queja o sugerencia</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      
+          <div class="modal-body">
+                
+                <h5 class="mb-3 mt-3">¿Desea eliminar este usuario?</h5>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-danger btnModalEliminar">Eliminar</button>
+                </div>
+
+          </div>
+
+    
+
+    </div>
+  </div>
+</div>
+
+
 @endsection
 
 
@@ -187,6 +229,18 @@
         
             @endif
       });
+
+
+      var idEliminar=0;
+
+    $(".btnEliminar").click(function(){      
+     idEliminar = $(this).data('id');
+    });
+
+
+    $(".btnModalEliminar").click(function(){ 
+     $("#formEli_"+idEliminar).submit();
+    });
   </script>
 
 @endsection
