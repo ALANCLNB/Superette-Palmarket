@@ -83,8 +83,8 @@
                       </td>
 
                       <td>{{ $qys ->created_at }}</td>
-                      
-                      @if ($qys ->sucursal =='1')
+                      <td>{{ $qys ->Sucursal }}</td>
+                      {{-- @if ($qys ->sucursal =='1')
                       <td>Arboledas</td>
 
                       @elseif($qys ->sucursal =='2')
@@ -99,7 +99,7 @@
                       @elseif($qys ->sucursal =='5')
                       <td>Zapata</td>
 
-                      @endif
+                      @endif --}}
 
                       
                       <td>
@@ -195,11 +195,12 @@
               
                   <select class="custom-select   col-lg-4 col-md-6 col-sm-10    ml-auto mb-auto mr-auto mt-auto" name="sucursal" id="validationCustom04" required>
                     <option selected disabled value="">Seleccionar</option>
-                    <option value="1">Arboledas</option>
-                    <option value="2">Lagunas</option>
-                    <option value="3">Pueblo</option>
-                    <option value="4">Reforma</option>
-                    <option value="5">Zapata</option>
+                    
+                    
+                    @foreach ($sucursales as $sucursal)
+                        <option value="{{ $sucursal->id }}">{{ $sucursal->nombre }}</option>
+                    @endforeach
+                    
                   </select>
 
             </div>

@@ -34,8 +34,15 @@
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#ofertones">Ofertas de la semana</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#cuponzasos">Cupones</a></li>
                         <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#contact">Contacto</a></li>
+                       
+                       
+                        @if (Auth::check())
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">{{ Auth::user()->nombre }}</a></li>
+                                {{-- <img class="img-profile rounded-circle w-4 h-4" src="https://gaminguardian.com/wp-content/uploads/2020/03/kanojo-okarishimasu.png" style="height: 50px; width: 50px;"> --}}
+                        @else
+                                <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/login">Iniciar Sesion</a></li> 
+                        @endif 
                         
-                        <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#">Iniciar Sesion</a></li>
                     </ul>
                 </div>
             </div>
@@ -149,7 +156,10 @@
                                 <div class="departamentos-hover">
                                     <div class="departamentos-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="{{asset('/principal-archivos/assets/img/departamentos/PANADERIA.png')}}" alt="" />
+
+                                <div class="" style="">
+                                    <img class=" img-fluid" src="{{asset('/principal-archivos/assets/img/departamentos/PANADERIA.png')}}" alt=""  style=";"/>
+                                </div>
                             </a>
                             <div class="departamentos-caption">
                                 <div class="departamentos-caption-heading">PANADERIA Y TORTILLERIA</div>
@@ -165,7 +175,9 @@
                                 <div class="departamentos-hover">
                                     <div class="departamentos-hover-content"><i class="fas fa-plus fa-3x"></i></div>
                                 </div>
-                                <img class="img-fluid" src="{{asset('/principal-archivos/assets/img/departamentos/LIMPIEZA.png')}}" alt="" />
+                                <div class="" style="">
+                                    <img class="img-fluid" src="{{asset('/principal-archivos/assets/img/departamentos/LIMPIEZA.png')}}" alt="" />
+                                </div>
                             </a>
                             <div class="departamentos-caption">
                                 <div class="departamentos-caption-heading">HIGIENE PERSONAL Y LIMPIEZA</div>

@@ -1,28 +1,27 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-use Validator;
-use App\Role;//modelo al que se va a referir
-class RolesController extends Controller
+use Illuminate\Support\Facades\DB;
+use App\Sucursale;
+
+class SucursalesController extends Controller
 {
+
     public function __construct(){
         $this->middleware('auth');
     }
-
     
-
     public function index()
     {
-        $role = \DB::table('roles')
+        $sucu = \DB::table('sucursales')
         //->where('created_at', '>=', now()->subDays(7))
-        ->join('users','users.id','=','roles.id_user')
-        ->select('roles.*','users.nombre as Usernombre')
+        //->join('users','users.id','=','sucursales.id_user')
+        ->select('sucursales.*')
         ->orderBy('id','DESC')
         ->get();
 
-       return view('dashboard.roles.roles',['role'=>$role]);
+       return view('dashboard.sucursales.sucursales',['sucu'=>$sucu]);
 
        //return view('dashboard.categorias.categorias', compact('cate'));
 
@@ -31,8 +30,8 @@ class RolesController extends Controller
     public  function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
-                'id_user' => 'required|min:1|max:3',
-                'descripcion' => 'required|min:3|max:80'
+                'nombre' => 'required|min:3|max:30',
+                'direccion' => 'required|min:3|max:80'
 
         ]);
 
@@ -45,15 +44,15 @@ class RolesController extends Controller
 
         }else{
             //dd('Guardado'.$request->nombre);
-            $categorias = Role::create([
-                'id_user' => $request->id_user,
-                'descripcion' => $request->descripcion
+            $sucursales = Sucursale::create([
+                'nombre' => $request->nombre,
+                'direccion' => $request->direccion
                 
 
             ]);
             
             return back()
-            ->with('Listo', 'Se ha insertado el rol correctamente');
+            ->with('Listo', 'Se ha insertado la sucursal correctamente');
            
         }
     }
@@ -61,11 +60,9 @@ class RolesController extends Controller
     public function destroy($id)
     {
         //dd($id);
-        $Dcat = Role::find($id);
+        $borrar = Sucursale::find($id);
 
-        $Dcat->delete();
-        return back()->with('Listo','El rol fue eliminada con exito.');
-    } 
-
-
+        $borrar->delete();
+        return back()->with('Listo','La sucursal fue eliminada con exito.');
+    }
 }

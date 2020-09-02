@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Validator;
-use App\Producto;//modelo al que se va a referir
+use App\Producto,Categoria;//modelo al que se va a referir
 class ProductosController extends Controller
 {
 
+    public function __construct(){
+        $this->middleware('auth');
+    }
 
+    
     public function index()
     {
         $prod = DB::table('productos')
@@ -21,6 +25,10 @@ class ProductosController extends Controller
         ->orderBy('id','ASC')
         ->get();
 
+        $categoria = DB::table('categorias')
+        ->select('categorias.*')
+        ->orderBy('descripcion','DESC')
+        ->get();
 
        // $productos = \DB::table('productos')
         //->where('created_at', '>=', now()->subDays(7))
@@ -28,7 +36,7 @@ class ProductosController extends Controller
        // ->orderBy('id','DESC')
         //->get();
 
-       return view('dashboard.productos.productos',['prod' => $prod]);
+       return view('dashboard.productos.productos',['prod' => $prod , 'categoria' => $categoria]);
         //return view('dashboard.productos.productos');
     }
    

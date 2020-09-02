@@ -1,15 +1,15 @@
-@extends('dashboard.dash')
+@include('dashboard.dash')
 
 
 
 
-@section('roles')
+@section('sucursales')
 
 
 <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-auto mr-auto" 
-style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="fas fa-plus fa-sm text-white-50"></i> Nueva Categoria</a>
-<h1 class="h3 mb-2 text-gray-800">Roles</h1>
-<p class="mb-4">Bienvenido a roles.</p>
+style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="fas fa-plus fa-sm text-white-50"></i> Nueva Sucursal</a>
+<h1 class="h3 mb-2 text-gray-800">Sucursales</h1>
+<p class="mb-4">Bienvenido a sucursales.</p>
 
 
 {{-- Alerta Error al llenar campos --}}
@@ -36,9 +36,8 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="
           <thead>
             <tr>
               <th>ID</th>
-              <th>Registrado por:</th>
-              <th>Descripcion</th>
-              <th>Acciones</th>
+              <th>Nombre</th>
+              <th>Dirección</th>
           </thead>
           
           <tfoot>
@@ -47,22 +46,22 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="
             <th>Descripcion</th> --}}
           </tfoot>
   
-          @foreach ($role as $rol)
+          @foreach ($sucu as $sucursal)
                         <tr>
-                          <td>{{ $rol ->id }}</td>
-                          <td>{{ $rol ->Usernombre }}</td>
-                          <td>{{ $rol ->descripcion }}</td>
+                          <td>{{ $sucursal ->id }}</td>
+                          <td>{{ $sucursal ->nombre }}</td>
+                          <td>{{ $sucursal ->direccion }}</td>
                           <td>
                               
                                   <a href="" class="btn btn-info boton"><i class="fa fa-edit"></i></a>
                       
-                                  <button class="btn btn-danger  btnEliminar" data-id="{{ $rol->id }}" data-toggle="modal" data-target="#modalEliminar">
+                                  <button class="btn btn-danger  btnEliminar" data-id="{{ $sucursal->id }}" data-toggle="modal" data-target="#modalEliminar">
                                     <i class="fa fa-trash"></i></button>
                                     
                                     
-                                      <form action="{{ url('/dash/admin/roles', ['id'=>$rol->id] ) }}" method="POST" id="formEli_{{ $rol->id }}">
+                                      <form action="{{ url('/dash/admin/sucursales', ['id'=>$sucursal->id] ) }}" method="POST" id="formEli_{{ $sucursal->id }}">
                                             @csrf
-                                            <input type="hidden" name="id" value="{{ $rol->id }}">
+                                            <input type="hidden" name="id" value="{{ $sucursal->id }}">
                                             <input type="hidden" name="_method" value="delete">
                                       </form>
                                   
@@ -90,14 +89,14 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Agregar rol</h5>
+              <h5 class="modal-title" id="exampleModalLabel">Agregar sucursal</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
     
 
-            <form action="/dash/admin/roles" method="POST">
+            <form action="/dash/admin/sucursales" method="POST">
                 @csrf
                 <div class="modal-body">
     
@@ -119,11 +118,11 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="
                     {{-- Fin Alerta Errores --}}
     
                     <div class="form-group">
-                        <input type="text" class="form-control" name="id_user" placeholder="Usuario" value="1">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre" value="{{ old('nombre') }}">
                     </div>
 
                     <div class="form-group">
-                    <input type="text" class="form-control" name="descripcion" placeholder="Descripción" value="{{ old('descripcion') }}">
+                    <input type="text" class="form-control" name="direccion" placeholder="Direccion" value="{{ old('direccion') }}">
                     </div>
     
     
@@ -146,7 +145,7 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Eleminar Rol</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Eleminar Sucursal</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -155,7 +154,7 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="
         
             <div class="modal-body">
                   
-                  <h5 class="mb-3 mt-3">¿Desea eliminar el rol?</h5>
+                  <h5 class="mb-3 mt-3">¿Desea eliminar la sucursal?</h5>
   
                   <div class="modal-footer">
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>

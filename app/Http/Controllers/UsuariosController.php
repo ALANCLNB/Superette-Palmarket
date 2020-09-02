@@ -2,14 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Validator;
-use App\User;//modelo al que se va a referir
+use Illuminate\Http\Request;
 use Hash;//incriptar contrase;as
+use Illuminate\Support\Facades\DB;
+use App\User,Role,Sucursale;//modelo al que se va a referir
 
 class UsuariosController extends Controller
 {
+    
     //
+    public function __construct(){
+        $this->middleware('auth');
+
+    }
+
+
 
    public function index()
    {
@@ -19,7 +27,18 @@ class UsuariosController extends Controller
         ->orderBy('id','DESC')
         ->get();
 
-       return view('dashboard.usuarios.usuarios',compact('usuarios'));//'usuarios,variable,variable' para poner varis variables a enviar
+
+        $rol = DB::table('roles')
+        ->select('roles.*')
+        ->orderBy('descripcion','DESC')
+        ->get();
+
+        $sucursal = DB::table('sucursales')
+        ->select('sucursales.*')
+        ->orderBy('nombre','DESC')
+        ->get();
+
+       return view('dashboard.usuarios.usuarios',compact('usuarios','rol','sucursal'));//'usuarios,variable,variable' para poner varis variables a enviar
    } 
 
     public  function store(Request $request)

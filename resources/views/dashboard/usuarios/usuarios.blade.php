@@ -158,15 +158,35 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="imagen" placeholder="Imagen">
+                    <input type="file" class="form-control" name="imagen" placeholder="Imagen">
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="rol" placeholder="Rol">
+                  <label for="validationCustom04" class="col-lg-12 col-md-12 col-sm-12">Rol</label>
+              
+                  <select class="custom-select   col-lg-12 col-md-12 col-sm-12    ml-auto mb-auto mr-auto mt-auto" name="categoria" id="validationCustom04" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    
+                    
+                    @foreach ($rol as $r)
+                        <option value="{{ $r->id }}">{{ $r->descripcion }}</option>
+                    @endforeach
+                    
+                  </select>
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="sucursal" placeholder="Sucursal">
+                  <label for="validationCustom04" class="col-lg-12 col-md-12 col-sm-12">Sucursal</label>
+              
+                  <select class="custom-select   col-lg-12 col-md-12 col-sm-12    ml-auto mb-auto mr-auto mt-auto" name="categoria" id="validationCustom04" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    
+                    
+                    @foreach ($sucursal as $sucu)
+                        <option value="{{ $sucu->id }}">{{ $sucu->nombre }}</option>
+                    @endforeach
+                    
+                  </select>
                 </div>
 
             </div>

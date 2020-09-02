@@ -146,20 +146,28 @@ style="float: right" data-toggle="modal" data-target="#modalAgregarP"><i class="
                 </div>
 
                 <div class="form-group">
-                    <input type="text" class="form-control" name="categoria" placeholder="Categoría" value="">
-                    {{-- <select class="custom-select    col-lg-4 col-md-6 col-sm-10    ml-auto mb-auto mr-auto mt-auto" name="tipo" id="validationCustom04" required>
-                     
-                      <option selected disabled value="">Seleccionar</option>
-                      <option selected disabled value="1">1</option>
-                       @foreach ($Cateid as $c)
-                          <option value="{{ $c->Cateid }}">{{ $c->descripcion }}</option>
-                      @endforeach 
-                      
-                      
-                    </select> --}}
+                  <label for="validationCustom04" class="col-lg-12 col-md-12 col-sm-12">Categoria</label>
+              
+                  <select class="custom-select   col-lg-12 col-md-12 col-sm-12    ml-auto mb-auto mr-auto mt-auto" name="categoria" id="validationCustom04" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    
+                    
+                    @foreach ($categoria as $cat)
+                        <option value="{{ $cat->id }}">{{ $cat->descripcion }}</option>
+                    @endforeach
+                    
+                  </select>
                 </div>
+
                 <div class="form-group">
-                  <input type="text" class="form-control" name="oferta" placeholder="Oferta" value="">
+                  <label for="validationCustom04" class="col-lg-12 col-md-12 col-sm-12">Oferta</label>
+              
+                  <select class="custom-select   col-lg-12 col-md-12 col-sm-12    ml-auto mb-auto mr-auto mt-auto" name="oferta" id="validationCustom04" required>
+                    <option selected disabled value="">Seleccionar</option>
+                    <option value="0">Si</option>
+                    <option value="1">No</option>
+                  </select>
+                    
                   </div>
 
                 <div class="form-group">
