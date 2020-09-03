@@ -1,9 +1,11 @@
 @extends('dashboard.dash')
 
 
-
-
 @section('cupones')
+    <h1>holoooo</h1>
+@endsection
+
+@section('cupones2')
 <div class="container-fluid">
   <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm ml-auto mr-auto" 
   style="float: right" data-toggle="modal" data-target="#modalAgregarC"><i class="fas fa-plus fa-sm text-white-50"></i> Nuevo Cupon</a>

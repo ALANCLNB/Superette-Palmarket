@@ -19,9 +19,9 @@ Route::get('/', function () {
 });
 
 
-Route::get('/index', function () {
-    //return view('layouts.principal');
-});
+/*Route::get('/index', function () {
+    return view('layouts.principal');
+});*/
 
 
 //Route::get('/dash', function () {
@@ -40,22 +40,22 @@ Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
    
     Route::get('/', 'AdminController@index' );
     
-    Route::get('/admin', function () {
+    /*Route::get('/admin', function () {
         return view('dashboard.admin.admindash');
     });
 
     Route::get('/user', function () {
         return view('dashboard.user.userdash');
-    });
+    });*/
 
-    Route::get('/admin/productos', 'ProductosController@index');
-    Route::get('admin/usuarios', 'UsuariosController@index');
-    Route::get('admin/qys', 'QySController@index');
-    Route::get('admin/ofertas', 'OfertasController@index');
-    Route::get('admin/categorias', 'CategoriasController@index');
-    Route::get('admin/roles', 'RolesController@index');
-    Route::get('admin/sucursales', 'SucursalesController@index');
-    Route::post('admin/cupones', 'CuponesController@store');
+    //Route::get('/admin/productos', 'ProductosController@index');
+    //Route::get('admin/usuarios', 'UsuariosController@index');
+    //::get('admin/qys', 'QySController@index');
+    //Route::get('admin/ofertas', 'OfertasController@index');
+    //Route::get('admin/categorias', 'CategoriasController@index');
+    //Route::get('admin/roles', 'RolesController@index');
+    //Route::get('admin/sucursales', 'SucursalesController@index');
+    //Route::post('admin/cupones', 'CuponesController@store');
 
 
     

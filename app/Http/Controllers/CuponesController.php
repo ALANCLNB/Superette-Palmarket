@@ -10,9 +10,7 @@ use App\Cupone,Categoria;
 
 class CuponesController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth');
-    }
+    
 
     public function index()
     {

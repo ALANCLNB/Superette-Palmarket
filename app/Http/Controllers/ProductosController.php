@@ -9,9 +9,7 @@ use App\Producto,Categoria;//modelo al que se va a referir
 class ProductosController extends Controller
 {
 
-    public function __construct(){
-        $this->middleware('auth');
-    }
+  
 
     
     public function index()

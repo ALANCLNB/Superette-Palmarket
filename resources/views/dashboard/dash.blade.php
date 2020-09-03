@@ -224,7 +224,7 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="font-size: 1.6rem">{{ Auth::user()->nombre }}</span> 
+                {{-- <span class="mr-2 d-none d-lg-inline text-gray-600 small" style="font-size: 1.6rem">{{ Auth::user()->nombre }}</span>  --}}
                 <img class="img-profile rounded-circle" src="https://gaminguardian.com/wp-content/uploads/2020/03/kanojo-okarishimasu.png" >
               </a>
               <!-- Dropdown - User Information -->
@@ -285,16 +285,16 @@
 <div class="container-fluid">
  
 @yield('principal')
-
+@yield('sucursales')
 @yield('productos')
 @yield('usuarios')
-@yield('qysadmin')
-@yield('qysuser')
+{{-- @yield('qysadmin')
+@yield('qysuser') --}}
 @yield('ofertas')
 @yield('cupones')
 @yield('categorias')
 @yield('roles')
-@yield('sucursales')
+
   
 
 

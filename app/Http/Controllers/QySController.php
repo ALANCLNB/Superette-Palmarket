@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Validator;
-use App\Comentario;//modelo al que se va a referir
 use App\Sucursale;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Comentario;//modelo al que se va a referir
+
 class QySController extends Controller
 {
-    public function __construct(){
-        $this->middleware('auth');
-    }
+
     
    
     
