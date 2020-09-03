@@ -2,11 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Validator;
-use App\Cupone,Categoria;
 
 class CuponesController extends Controller
 {
@@ -49,29 +45,9 @@ class CuponesController extends Controller
             ->with('ErrorInsert', 'Favor de llenar todos los campos')
             ->withErrors($validator);
 
-        }else{
-            //dd('Guardado'.$request->nombre);
-            $cupones = Cupone::create([
-                'id_user' => $request->id_user,
-                'codigo' => $request->codigo,
-                'descripcion' => $request->descripcion,
-                'id_categoria' => $request->id_categoria
-                
 
-            ]);
-            
-            return back()
-            ->with('Listo', 'Se ha insertado el cupon correctamente');
-           
-        }
-    }
+    
+}
 
-    public function destroy($id)
-    {
-        //dd($id);
-        $borrar = Cupone::find($id);
-
-        $borrar->delete();
-        return back()->with('Listo','El cupon fue eliminada con exito.');
-    }
+}
 }

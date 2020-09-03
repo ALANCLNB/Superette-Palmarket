@@ -17,7 +17,7 @@ class RolesMigration extends Migration
             $table->id();
             $table->char('id_user',5);
             $table->string('descripcion');
-            //$table->bigIncrements('token');
+            $table->char('token',2);
             $table->rememberToken();
             $table->timestamps();
         });

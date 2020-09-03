@@ -10580,16 +10580,5 @@ text-align: center;
 
 #logoPrincipal:hover{
   transform: scale(1.5);
-min-width: 265px;
-
-min-height: 200;
-min-width: 265px; max-width: 217px; min-height: 200;max-height: 400;
-background-color: aqua;
-height: 30px;
-width:30px ;
 }
-
-
-
-
 

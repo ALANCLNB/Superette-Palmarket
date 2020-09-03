@@ -11,59 +11,10 @@ class RolesController extends Controller
     
     
 
-    public function index()
-    {
-        $role = \DB::table('roles')
-        //->where('created_at', '>=', now()->subDays(7))
-        ->join('users','users.id','=','roles.id_user')
-        ->select('roles.*','users.nombre as Usernombre')
-        ->orderBy('id','DESC')
-        ->get();
+    public function index(){
 
-       return view('dashboard.roles.roles',['role'=>$role]);
-
-       //return view('dashboard.categorias.categorias', compact('cate'));
 
     }
-
-    public  function store(Request $request)
-    {
-        $validator = Validator::make($request->all(),[
-                'id_user' => 'required|min:1|max:3',
-                'descripcion' => 'required|min:3|max:80'
-
-        ]);
-
-        if($validator -> fails()){
-            //dd('Llena todos los campos');
-            return back()
-            ->withInput()
-            ->with('ErrorInsert', 'Favor de llenar todos los campos')
-            ->withErrors($validator);
-
-        }else{
-            //dd('Guardado'.$request->nombre);
-            $categorias = Role::create([
-                'id_user' => $request->id_user,
-                'descripcion' => $request->descripcion
-                
-
-            ]);
-            
-            return back()
-            ->with('Listo', 'Se ha insertado el rol correctamente');
-           
-        }
-    }
-
-    public function destroy($id)
-    {
-        //dd($id);
-        $Dcat = Role::find($id);
-
-        $Dcat->delete();
-        return back()->with('Listo','El rol fue eliminada con exito.');
-    } 
 
 
 }

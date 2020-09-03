@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row justify-content-center" style="margin-top: 5rem;">
                     <div class="col-lg-8">
-                        <div class="modal-body" style="height: 100%">
+                        <div class="modal-body">
 
 
                             <!-- Lista de productos-->
@@ -26,49 +26,33 @@
                         </div>
                         
                         
-                        {{-- <div class="container d-block" style="margin-top: 3rem;">
+                        <div class="container d-block" style="margin-top: 3rem;">
 
-                            <div class="row no-gutters" >
+                            <div class="row no-gutters">
 
-                                @for($i=0; $i<16; $i++)
-                                    <div class="col-lg-3 col-md-4 col-sm-6 fondo con ml-auto mb-auto mr-auto mt-auto " style="margin-bottom: 0.5rem; float: left;height:300px ">
-                                        <img src="{{asset('/principal-archivos/assets/img/lacteos.png')}}" class="img-fluid " style="width: 95%; height: 95%; float: left;">
+                                @for($i=0; $i<6; $i++)
+                                    <div class="col-lg-3 col-md-4 col-sm-6 fondo con ml-auto mb-auto mr-auto mt-auto" style="margin-bottom: 0.5rem;">
+                                        <img src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" class="img-fluid" style="width: 95%; height: 95%; float: left;">
 
                                         <ul class="list-inline">
                                             <li>Nombre</li>
                                             <li>Marca</li>
                                             <li>Precio</li>
                                         </ul>
-                                           
+                                            {{-- <div class="texto1 mb-3">hola</div>
+                                        <div class="texto2 mt-5">Creado por:</div> --}}
                                     </div>
                                         
                                     @endfor
-                            </div>
-                        </div> --}}
-                        <div class="container d-block" style="margin-top: 3rem; background-color: aqua;">
 
-                            <div class="row no-gutters" style="background-color: RED; ">
-                                @for($i=0; $i<16; $i++)
-                                <div class=" ml-auto mb-auto mr-auto mt-auto " style="margin-bottom: 0.5rem;height:300px background-color: green;">
-       
-                                        <img src="{{asset('/principal-archivos/assets/img/lacteos.png')}}" class="img-fluid " style="width: 95%; height: 95%; float: left;">
-                                <div>
-                                        <ul class="list-inline">
-                                            <li>Nombre</li>
-                                            <li>Marca</li>
-                                            <li>Precio</li>
-                                        </ul>
-                                </div>
+
+                                    
+
+                                
                                    
                                 
-                                </div>
-                            
-                            @endfor
+                            </div>
                         </div>
-                        </div>
-
-
-
 
                                     {{-- <div class="productoscontenedor" style="width: 25%;">
                                         <img class="img-fluid d-block mx-auto" src="{{asset('/principal-archivos/assets/img/bg-header.png')}}" alt="" />
@@ -84,6 +68,7 @@
                                             Close Project
                                         </button>
                                     </div> --}}
+
                     </div>
                                 {{-- Divs de productos --}}
                                 

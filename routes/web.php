@@ -24,13 +24,11 @@ Route::get('/', function () {
 });*/
 
 
-//Route::get('/dash', function () {
-  //  return view('dashboard.dash');
-//});
+Route::get('/dash', function () {
+    return view('dashboard.dash');
+});
 
-//Route::get('/dash', 'AdminController@index');
 
-//Route::resource('/dash', 'AdminController');
 
 
 
@@ -38,7 +36,9 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
    
-    Route::get('/', 'AdminController@index' );
+    Route::get('/', function () {
+        return view('dashboard.principaldash');
+    });
     
     /*Route::get('/admin', function () {
         return view('dashboard.admin.admindash');
@@ -58,15 +58,9 @@ Route::group(['prefix' => 'dash', 'as' => 'dash'], function () {
     //Route::post('admin/cupones', 'CuponesController@store');
 
 
-    
     Route::resource('admin/usuarios', 'UsuariosController');
     Route::resource('admin/productos', 'ProductosController');
     Route::resource('admin/qys', 'QySController');
     Route::resource('admin/roles', 'RolesController');
     Route::resource('admin/categorias', 'CategoriasController');
-    Route::resource('admin/sucursales', 'SucursalesController');
-    Route::resource('admin/cupones', 'CuponesController');
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

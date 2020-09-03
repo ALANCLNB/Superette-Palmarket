@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Validator;
-use App\Sucursale;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Comentario;//modelo al que se va a referir
 
@@ -18,16 +16,11 @@ class QySController extends Controller
     {
 
         $qysug = \DB::table('comentarios')
-        ->join('sucursales','sucursales.id','=','comentarios.sucursal')
-        ->select('comentarios.*','sucursales.nombre as Sucursal')
+        ->select('comentarios.*')
         ->orderBy('created_at','DESC')
         ->get();
 
-        $sucursales = \DB::table('sucursales')
-        ->orderBy('created_at','DESC')
-        ->get();
-
-       return view('dashboard.qys.qys',['qysug' => $qysug,'sucursales' => $sucursales]);
+       return view('dashboard.qys.qys')->with('qysug',$qysug);
 
 
         //return view('dashboard.qys.qys');
